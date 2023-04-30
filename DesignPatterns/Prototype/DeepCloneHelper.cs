@@ -49,7 +49,7 @@ namespace DesignPatterns.Prototype
             return result as T;
         }
 
-        public static List<FieldInfo> GetAllHierarcihalFields(Type type,BindingFlags bindingFlags)
+        private static List<FieldInfo> GetAllHierarcihalFields(Type type,BindingFlags bindingFlags)
         {
             var fields = type.GetFields(
                 bindingFlags).ToList() ;
