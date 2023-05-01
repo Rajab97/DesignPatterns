@@ -7,6 +7,7 @@ using DesignPatterns.AbstractFactory.Constants;
 using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
+using DesignPatterns.Decorator;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Factories;
 using DesignPatterns.Prototype;
@@ -70,8 +71,17 @@ Console.WriteLine($"Earth_StaticWithLazyInit:{Earth_StaticWithLazyInit.Instance}
 //The Adapter Design Pattern is a Structural Design Pattern that allows incompatible interfaces (objects) to work together.
 //The Adapter Design Pattern acts as a bridge between two incompatible objects.
 #region Adapter
-ISalaryServiceAdapter salaryAdapter = new SalaryServiceAdapter();
+/*ISalaryServiceAdapter salaryAdapter = new SalaryServiceAdapter();
 IEmployeeService employeeService = new EmployeeService(salaryAdapter);
-employeeService.PaySalaries();
+employeeService.PaySalaries();*/
+#endregion
+//The Decorator pattern is a design pattern that allows you to dynamically add behavior to an object by wrapping it in an object of a decorator class.
+//The decorator class provides additional functionality to the original object without changing its interface or structure.
+#region Decorator
+//var textEditor = new TextEditor();
+//var upperLetterDecorator = new TextEditorWithUpperLettersDecorator(textEditor);
+//var grammerCheckDecorator = new TextEditorWithGrammerCheckDecorator(upperLetterDecorator);
+//var spellCheckEditor = new TextEditorWithSpellCheckDecorator(grammerCheckDecorator);
+//spellCheckEditor.WriteText("My name is Robot");
 #endregion
 Console.ReadLine();
