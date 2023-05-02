@@ -8,8 +8,10 @@ using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
 using DesignPatterns.Decorator;
+using DesignPatterns.Facade;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Factories;
+using DesignPatterns.Observer;
 using DesignPatterns.Prototype;
 
 /*IAccountService accountService = new AccountService(new ForeignBankAccountFactory());
@@ -83,5 +85,37 @@ employeeService.PaySalaries();*/
 //var grammerCheckDecorator = new TextEditorWithGrammerCheckDecorator(upperLetterDecorator);
 //var spellCheckEditor = new TextEditorWithSpellCheckDecorator(grammerCheckDecorator);
 //spellCheckEditor.WriteText("My name is Robot");
+#endregion
+
+//The Facade pattern is a design pattern used in software engineering to provide a simple and unified interface to a complex system.
+//The pattern is based on the principle of encapsulation, which involves hiding the implementation details of a subsystem from its clients. 
+#region Facade
+/*var restaurant = new OnlineRestaurantService();
+var shippingService = new ShippingService();
+var facade = new OrderManagementFacadeService(restaurant, shippingService);
+var chickenOrder = new Order() { DishName = "Chicken with rice", DishPrice = 20.0, User = "User1", ShippingAddress = "Random street 123" };
+var sushiOrder = new Order() { DishName = "Sushi", DishPrice = 52.0, User = "User2", ShippingAddress = "More random street 321" };
+facade.OrderFood(new List<Order>() { chickenOrder, sushiOrder });*/
+#endregion
+
+
+//The Observer pattern is a design pattern that enables objects to be notified automatically when the state of another object changes.
+//In this pattern, there are two types of objects: Observers and Subjects.
+//Observers are objects that need to be notified when the state of the Subject changes. The Subject is the object that is being observed.
+#region Observer
+var user = new User() { Id = 1,Name = "Receb" , Surname = "Qarayev" };
+var user2 = new User() { Id = 2,Name = "Qeshem" , Surname = "Qarayev" };
+
+var product = new Product("Iphone14",0);
+var product2 = new Product("Iphone14 Pro",0);
+
+user.SubscribeToProduct(product);
+user.SubscribeToProduct(product2);
+user2.SubscribeToProduct(product);
+user2.SubscribeToProduct(product2);
+
+product.AddProduct(2);
+product2.AddProduct(3);
+
 #endregion
 Console.ReadLine();
